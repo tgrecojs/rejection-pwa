@@ -15,12 +15,12 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path='/' component={App}>
-      <Route path='*' component={PageNotFound} />
       <IndexRoute component={QuestionsBase} />
       <Route path='login' component={SignInForm} />
       <Route path='register' component={SignUpForm} />
       <Route path='new-question' component={NewQuestion} />
       <Route path='profile' component={Profile} />
+      <Route path='*' component={PageNotFound} />
       </Route>
     </Router>
   </Provider>
