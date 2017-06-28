@@ -14,8 +14,8 @@ export const CREATE_QUESTION_SUCCESS = 'CREATE_QUESTION_SUCCESS';
 export const CREATE_QUESTION_FAILURE = 'CREATE_QUESTION_FAILURE';
 export const RESET_NEW_QUESTION = 'RESET_NEW_QUESTION';
 
-//const ROOT_URL = location.href.indexOf("localhost") > 0 ? "http://localhost:5000/api":"/api";
- const ROOT_URL = "http://localhost:5000/api";
+//const ROOT_URL = location.href.indexOf("localhost") > 0 ? "https://sleepy-tor-25771.herokuapp.com/api":"/api";
+ const ROOT_URL = "https://sleepy-tor-25771.herokuapp.com/api";
 
 export function fetchQuestions() {
   const request = axios({
