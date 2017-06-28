@@ -42,17 +42,6 @@ export const fetchQuestionsFailure  = (error) => ({
     payload: error
 })
 
-const evalQuestion = (answer) => {
-  if (answer === true) {
-    return + 1;
-  } else {
-    return + 10
-  }
-}
-
-const evalAnswer = answer => answer === true ? 1 : 10;
-
-
 export const createQuestion = ({ id = cuid(), questionString = 'default question', askee = 'Mr. Anonomyous', answer = false}, token) => {
   // console.log(props.answer)
 
@@ -63,7 +52,7 @@ export const createQuestion = ({ id = cuid(), questionString = 'default question
       questionString: questionString,
       answer,
       askee,
-      answerWorth: evalAnswer(answer) 
+      answerWorth: answer === true ? 1 : 10 
     },
     url: `${ROOT_URL}/questions`,
     headers: {

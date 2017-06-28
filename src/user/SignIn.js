@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { reduxForm, Field } from 'redux-form';
 import renderField from '../helpers/renderField';
 import { validate } from '../helpers/form';
-import { validateAndSignInUser } from './actions';
+import { validateAndSignInUser, resetUser } from './actions';
 import { connect } from 'react-redux'
 
 //import '../form.css'
@@ -17,7 +17,7 @@ class SignInFormComponent extends Component {
   componentWillMount() {
     //Important! If your component is navigating based on some global state(from say componentWillReceiveProps)
     //always reset that global state back to null when you REMOUNT
-    // this.props.resetUser();
+    this.props.resetUser();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -91,7 +91,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 }
 SignInFormComponent = connect(
-  mapStateToProps
+  mapStateToProps, { resetUser }
 )(SignInFormComponent)
 
 export default SignInFormComponent;

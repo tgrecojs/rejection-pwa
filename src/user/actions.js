@@ -36,9 +36,6 @@ export const validateAndSignInUser = (values, dispatch) => {
         throw new SubmissionError(result.payload.response.data);
       }
 
-      //Store JWT Token to browser session storage 
-      //If you use localStorage instead of sessionStorage, then this w/ persisted across tabs and new windows.
-      //sessionStorage = persisted only in current tab
       localStorage.setItem('token', result.payload.data.token);
       localStorage.setItem('id', result.payload.data.user._id);
       //let other components know that everything is fine by updating the redux` state
