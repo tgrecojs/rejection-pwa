@@ -1,26 +1,17 @@
 import React from 'react'
-import {userDetailsFlexbox, 
-  // profileDiv, 
-  divPadding, 
-  // centerText 
-} from '../helpers/styleGuide'
 
 
 const UserInfo = ({ firstName, lastName, email, questions}) => {
   return (
   <div>
-     <div className="userDetailsDiv" style={{...userDetailsFlexbox}}>
-          <h4 style={{...divPadding}}>Name:</h4>
-          <p> {firstName}</p>
+     <div className="userDetailsDiv">
+          <h4>User Name:</h4>
+          <p> {firstName} {lastName}</p>
         </div>
-        <div className="userDetailsDiv" style={{...userDetailsFlexbox}}>
-          <h4 style={{...divPadding}}>Username:</h4>
-          <p> {lastName}</p>
-        </div>
-         <div className="userDetailsDiv" style={{...userDetailsFlexbox}}>
-          <h4 style={{...divPadding}}>Email:</h4>
+        <div className="userDetailsDiv">
+          <h4>Email Address:</h4>
           <p> {email}</p>
-        </div> 
+        </div>
   </div>
   )
 }

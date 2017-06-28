@@ -14,8 +14,9 @@ export const CREATE_QUESTION_SUCCESS = 'CREATE_QUESTION_SUCCESS';
 export const CREATE_QUESTION_FAILURE = 'CREATE_QUESTION_FAILURE';
 export const RESET_NEW_QUESTION = 'RESET_NEW_QUESTION';
 
+
 //const ROOT_URL = location.href.indexOf("localhost") > 0 ? "https://sleepy-tor-25771.herokuapp.com/api":"/api";
- const ROOT_URL = "https://sleepy-tor-25771.herokuapp.com/api";
+const ROOT_URL = "https://sleepy-tor-25771.herokuapp.com/api";
 
 export function fetchQuestions() {
   const request = axios({
@@ -52,7 +53,7 @@ const evalQuestion = (answer) => {
 const evalAnswer = answer => answer === true ? 1 : 10;
 
 
-export const createQuestion = ({ id = cuid(), questionString = 'default question', answer = false}, token) => {
+export const createQuestion = ({ id = cuid(), questionString = 'default question', askee = 'Mr. Anonomyous', answer = false}, token) => {
   // console.log(props.answer)
 
   const request = axios({
@@ -61,6 +62,7 @@ export const createQuestion = ({ id = cuid(), questionString = 'default question
       id,
       questionString: questionString,
       answer,
+      askee,
       answerWorth: evalAnswer(answer) 
     },
     url: `${ROOT_URL}/questions`,

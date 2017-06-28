@@ -6,7 +6,6 @@ import * as Actions from './state/actions'
 import { connect } from 'react-redux'
 import * as Selectors from './state/selectors';
 // import _ from 'lodash/fp';
-import HeaderContainer from '../shared/Header';
 
 class QuestionsList extends Component {
   componentWillMount() {

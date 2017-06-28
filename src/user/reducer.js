@@ -18,12 +18,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
     return { ...state, user: action.payload.data.user, isAuthenticated:true, error:null, loading: false}; //<-- authenticated
     case ME_FROM_TOKEN_FAILURE:
     // return error and make loading = false
-     error = action.payload.data || {message: action.payload.message};//2nd one is network or server down errors   
-    return { ...state, user: null, isAuthenticated:true, error:error, loading: false};
+     //error.message handles network or server down errors   
+    return { ...state, user: null, isAuthenticated:false, error:action.payload.data || { message: action.payload.message }, loading: false};
     case RESET_TOKEN:
     // remove token from storage make loading = false
     return { ...state, user: null, isAuthenticated:true, error:null, loading: false};
-
     case SIGNUP_USER:
     // sign up user, set loading = true and isAuthenticated = signup
     return { ...state, user: null, isAuthenticated:false, error:null, loading: true}; 

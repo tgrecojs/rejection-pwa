@@ -43,14 +43,14 @@ class SignInFormComponent extends Component {
                  name="email"
                  type="text"
                  component={ renderField }
-                 label="@email*" />
+                 label="Email Address" />
           <Field
                  name="password"
                  type="password"
                  component={ renderField }
-                 label="Password*" />
+                 label="Password" />
           <div>
-            <div className="submitQuestionStyles">
+            <div className="button-styles">
             <button>
             <a
                     type="submit"

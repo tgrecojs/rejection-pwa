@@ -27,30 +27,30 @@ class SignUpForm extends Component {
       <div className='container'>
         <form onSubmit={ handleSubmit(validateAndSignUpUser) }>
           <Field
-                 name="lastName"
-                 type="text"
-                 component={ renderField }
-                 label="Last Name*" />
-          <Field
                  name="firstName"
                  type="text"
                  component={ renderField }
-                 label="@firstName*" />
+                 label="First Name" />
+          <Field
+          name="lastName"
+          type="text"
+          component={ renderField }
+          label="Last Name" />
           <Field
                  name="email"
                  type="email"
                  component={ renderField }
-                 label="Email*" />
+                 label="Email Address" />
           <Field
                  name="password"
                  type="password"
                  component={ renderField }
-                 label="Password*" />
+                 label="Password" />
           <Field
                  name="confirmPassword"
                  type="password"
                  component={ renderField }
-                 label="Confirm Password*" />
+                 label="Re-enter Password" />
           <div>
             <button
                     type="submit"
@@ -71,7 +71,7 @@ class SignUpForm extends Component {
 
 SignUpForm = reduxForm({
   form: 'SignUpForm', // a unique identifier for this form
-  fields: ['firstName', 'lastName', 'password', 'email', 'userScore'],
+  fields: ['firstName', 'lastName', 'password', 'email'],
   validateNewUser, // <--- validation function given to redux-form
 })(SignUpForm)
 

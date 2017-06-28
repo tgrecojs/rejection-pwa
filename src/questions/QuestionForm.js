@@ -4,8 +4,6 @@ import { Link } from 'react-router';
 import { reduxForm, Field } from 'redux-form';
 import renderField from '../helpers/renderField';
 import { createQuestionActionCreator } from './state/actions';
-import Header from '../shared/Header';
-
 import { resetNewQuestion } from './state/actions';
 import { connect } from 'react-redux';
 //Client side validation
@@ -57,13 +55,18 @@ class QuestionsForm extends Component {
                  name="questionString"
                  type="text"
                  component={ renderField }
-                 label="What were you asked?*" />
+                 label="What did you ask?" />
+                   <Field
+                 name="askee"
+                 type="text"
+                 component={ renderField }
+                 label="Who is being asked?" />
           <Field
                  name="answer"
                  type="checkbox"
                  component={ renderField }
                  label="Click the box to answer yes. To answer no, leave it unchecked" />
-            <div className="submitQuestionStyles fixed-width">
+            <div className="button-styles">
             <button
                     type="submit"
                     className="btn btn-primary"

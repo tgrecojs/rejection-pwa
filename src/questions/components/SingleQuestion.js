@@ -10,13 +10,16 @@ const SingleQuestion = rfx`
 // Take two values, a & b, and return the sum.
 add2(a: n, b: n) => Number
 `( 
-    ({questionString = 'Default Question String', answer = false, _createdBy = 'anonomyous@gmail.com', createdAt} = {}) => {
+    ({questionString = 'Default Question String', 
+    answer = false, _createdBy = 'anonomyous@gmail.com', 
+    askee = 'Mr. Anonomyous',
+    createdAt} = {}) => {
             return (
                 <li style={{...listItemStyles}} className={answer}>
-                    <h3>Question: {questionString}</h3>
-                    <h4>Don't Even need to show answer: {answer === 'false' ? 10 : 1 }</h4>
-                    <h5>Answered by: {_createdBy}</h5>
-                    <h3>Asked on: {createdAt}</h3>
+                    <h3>User: {_createdBy} </h3>
+                    <h4>Question Asked: {questionString}</h4>
+                    <h4>Asked to: {askee}</h4>
+                    <h5>Date: {createdAt}</h5>
                 </li>
   )
 }

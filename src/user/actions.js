@@ -23,8 +23,7 @@ export const UPDATE_USER_EMAIL = 'UPDATE_USER_EMAIL';
 
 //log out user
 export const LOGOUT_USER = 'LOGOUT_USER';
-
-// const ROOT_URL = location.href.indexOf("localhost") > 0 ? "https://sleepy-tor-25771.herokuapp.com/api":"/api";// '/api';
+//const ROOT_URL = location.href.indexOf("localhost") > 0 ? "https://sleepy-tor-25771.herokuapp.com/api":"/api";// '/api';
 const ROOT_URL = "https://sleepy-tor-25771.herokuapp.com/api";
 
 export const validateAndSignInUser = (values, dispatch) => {
@@ -195,3 +194,4 @@ export function logoutUser() {
     type: LOGOUT_USER
   };
 }
+

@@ -22,23 +22,6 @@ const defaultState = {
     loading: false
   },
 };
-export const question = (state = {}, action = {}) => {
-  const { payload, type } = action;
-  switch (type) {
-    case CREATE_QUESTION:
-      return {
-        id: payload.data.id,
-        questionString: payload.data.questionString,
-        answer: payload.data.answer,
-        score: payload.data.score,
-        _createdBy: payload.data._createdBy
-      };
-    default:
-      return state;
-  }
-};
-
-
 
 export const newQuestionReducer = (state = defaultState.newQuestion, action = {}) => {
   let error;
@@ -50,6 +33,7 @@ export const newQuestionReducer = (state = defaultState.newQuestion, action = {}
         question: {
           id: payload.data._id,
           questionString: payload.data.questionString,
+          askee: payload.data.askee,
           answer: payload.data.answer,
           _createdBy: payload.data._createdBy
         },
