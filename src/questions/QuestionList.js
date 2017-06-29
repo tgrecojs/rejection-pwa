@@ -41,8 +41,8 @@ class QuestionsList extends Component {
       <div className="flex-row">
         <div className="legend">
           <h3 style={{...centerText}}>Rejection App Game Legend</h3>
-          <p style={{color: 'green'}}>Green Cards = Accepted | 1 point</p>
-          <p style={{color: '#ec7982'}}>Red Cards = Rejected | 10 points</p>
+          <p style={{color: 'green'}}>Green Cards = Accepted | 10 point</p>
+          <p style={{color: '#ec7982'}}>Red Cards = Rejected | 1 point</p>
           <hr width="80%"/>
           <h4 style={{...centerText}}>Total Score of Combined Users: {totalScores}</h4>
         </div>

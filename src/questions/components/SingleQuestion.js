@@ -4,7 +4,7 @@ const listItemStyles = {
     width: '300px',
     padding: '1em',
     margin: '.5em 0 0 .5em',
-    border: '2px dotted #000'
+    border: '1px solid #fff'
 }
 const SingleQuestion = rfx`
 // Take two values, a & b, and return the sum.

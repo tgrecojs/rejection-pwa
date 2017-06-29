@@ -5,6 +5,7 @@ const questionListStyles = {
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'space-around',
+  alignItems: 'center'
 };
 
 const IterateQuestions = ({questions}) => {

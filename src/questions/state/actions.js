@@ -52,7 +52,7 @@ export const createQuestion = ({ id = cuid(), questionString = 'default question
       questionString: questionString,
       answer,
       askee,
-      answerWorth: answer === true ? 1 : 10 
+      answerWorth: answer === true ? 10 : 1 
     },
     url: `${ROOT_URL}/questions`,
     headers: {
