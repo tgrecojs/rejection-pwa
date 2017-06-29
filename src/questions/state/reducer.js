@@ -37,6 +37,7 @@ export const newQuestionReducer = (state = defaultState.newQuestion, action = {}
           answer: payload.data.answer,
           _createdBy: payload.data._createdBy
         },
+        error: null,
         loading: true
       }
     case CREATE_QUESTION_SUCCESS:

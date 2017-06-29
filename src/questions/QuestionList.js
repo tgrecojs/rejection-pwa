@@ -38,8 +38,20 @@ class QuestionsList extends Component {
 
     return (
       <div>
-        <h1 style={{...centerText}}>All Questions</h1>
-        <h4 style={{...centerText}}>Total Score of Combined Users: {totalScores}</h4>
+      <div className="flex-row">
+        <div className="legend">
+          <h3 style={{...centerText}}>Rejection App Game Legend</h3>
+          <p style={{color: 'green'}}>Green Cards = Accepted | 1 point</p>
+          <p style={{color: '#ec7982'}}>Red Cards = Rejected | 10 points</p>
+          <hr width="80%"/>
+          <h4 style={{...centerText}}>Total Score of Combined Users: {totalScores}</h4>
+        </div>
+        <div>
+        <h1 style={{...centerText}}>Welcome to the Rejection App.</h1>
+        <p>The goal is to track questions you ask in everyday life. You gotta lose to win!</p>
+        </div>
+      </div>
+        <h3 style={{...centerText}}>All Questions</h3>
           <IterateQuestions questions={questions} />
       </div>
     );

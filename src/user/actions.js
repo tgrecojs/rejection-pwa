@@ -18,9 +18,6 @@ export const SIGNIN_USER = 'SIGNIN_USER';
 export const SIGNIN_USER_SUCCESS = 'SIGNIN_USER_SUCCESS';
 export const SIGNIN_USER_FAILURE = 'SIGNIN_USER_FAILURE';
 
-//called when email is updated in profile to update main user's email state
-export const UPDATE_USER_EMAIL = 'UPDATE_USER_EMAIL';
-
 //log out user
 export const LOGOUT_USER = 'LOGOUT_USER';
 //const ROOT_URL = location.href.indexOf("localhost") > 0 ? "https://sleepy-tor-25771.herokuapp.com/api":"/api";// '/api';
