@@ -13,11 +13,11 @@ class SignUpForm extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-     if (nextProps.user.isAuthenticated === true && nextProps.user.user && !nextProps.user.error) {
+     if (nextProps.user.isAuthenticated === 'yes' && nextProps.user.user && !nextProps.user.error) {
       this.context.router.push('/');
     }
-      if (nextProps.user.isAuthenticated === false && !nextProps.user.user && nextProps.user.error && !this.props.user.error) {
-      alert(nextProps.user.error.message);
+      if (nextProps.user.isAuthenticated === 'no' && !nextProps.user.user && nextProps.user.error && !this.props.user.error) {
+      alert(`Something went wrong. ${nextProps.user.error.message}`);
     }
   }
 

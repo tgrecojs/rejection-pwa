@@ -7,7 +7,7 @@ import * as Selectors from '../questions/state/selectors';
 
 class Profile extends Component {
  componentWillReceiveProps(nextProps) {
-    if (nextProps.userState.isAuthenticated === false) {
+    if (nextProps.userState.isAuthenticated === 'yes') {
       this.context.router.push('/');
     }
   }

@@ -13,13 +13,13 @@ add2(a: n, b: n) => Number
     ({questionString = 'Default Question String', 
     answer = false, _createdBy = 'anonomyous@gmail.com', 
     askee = 'Mr. Anonomyous',
-    createdAt} = {}) => {
+    dateAsked} = {}) => {
             return (
                 <li style={{...listItemStyles}} className={answer}>
                     <h3>User: {_createdBy} </h3>
                     <h4>Question Asked: {questionString}</h4>
                     <h4>Asked to: {askee}</h4>
-                    <h5>Date: {createdAt}</h5>
+                    <h5>Date: {dateAsked}</h5>
                 </li>
   )
 }

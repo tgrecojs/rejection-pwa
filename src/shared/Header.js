@@ -82,7 +82,7 @@ class Header extends Component {
 
 function mapStateToProps(state) {
   return { 
-    authenticatedUser: state.userState.isAuthenticated === true ? state.userState.user : null,
+    authenticatedUser: state.userState.isAuthenticated === 'yes' ? state.userState.user : null,
     user: state.userState
   };
 }

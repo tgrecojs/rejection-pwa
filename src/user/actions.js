@@ -20,14 +20,13 @@ export const SIGNIN_USER_FAILURE = 'SIGNIN_USER_FAILURE';
 
 //log out user
 export const LOGOUT_USER = 'LOGOUT_USER';
-//const ROOT_URL = location.href.indexOf("localhost") > 0 ? "https://sleepy-tor-25771.herokuapp.com/api":"/api";// '/api';
+//const ROOT_URL = 'http://localhost:5000/api';
 const ROOT_URL = "https://sleepy-tor-25771.herokuapp.com/api";
+
 
 export const validateAndSignInUser = (values, dispatch) => {
   return dispatch(signInUser(values))
     .then((result) => {
-      // Note: Error's "data" is in result.payload.response.data (inside "response")
-      // success's "data" is in result.payload.data
       if (result.payload.response && result.payload.response.status !== 200) {
         dispatch(signInUserFailure(result.payload.response.data));
         throw new SubmissionError(result.payload.response.data);
@@ -35,8 +34,7 @@ export const validateAndSignInUser = (values, dispatch) => {
 
       localStorage.setItem('token', result.payload.data.token);
       localStorage.setItem('id', result.payload.data.user._id);
-      //let other components know that everything is fine by updating the redux` state
-      dispatch(signInUserSuccess(result.payload.data)); //ps: this is same as dispatching RESET_USER_FIELDS
+      dispatch(signInUserSuccess(result.payload.data)); 
     });
 };
 
@@ -100,7 +98,6 @@ export function meFromToken(tokenFromStorage) {
     method: 'get',
     url: `${ROOT_URL}/me/from/token?token=${tokenFromStorage}`,
   });
-  console.log('meFromToken request!', request);
 
   return {
     type: ME_FROM_TOKEN,

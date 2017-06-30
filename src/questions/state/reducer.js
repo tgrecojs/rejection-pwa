@@ -31,7 +31,7 @@ export const newQuestionReducer = (state = defaultState.newQuestion, action = {}
       return { 
           ...state.newQuestion,
         question: {
-          id: payload.data._id,
+          _id: payload.data._id,
           questionString: payload.data.questionString,
           askee: payload.data.askee,
           answer: payload.data.answer,

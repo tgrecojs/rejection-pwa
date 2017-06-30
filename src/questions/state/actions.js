@@ -17,6 +17,7 @@ export const RESET_NEW_QUESTION = 'RESET_NEW_QUESTION';
 
 //const ROOT_URL = location.href.indexOf("localhost") > 0 ? "https://sleepy-tor-25771.herokuapp.com/api":"/api";
 const ROOT_URL = "https://sleepy-tor-25771.herokuapp.com/api";
+//const ROOT_URL = 'http://localhost:5000/api';
 
 export function fetchQuestions() {
   const request = axios({
@@ -52,7 +53,8 @@ export const createQuestion = ({ id = cuid(), questionString = 'default question
       questionString: questionString,
       answer,
       askee,
-      answerWorth: answer === true ? 10 : 1 
+      answerWorth: answer === true ? 10 : 1,
+      
     },
     url: `${ROOT_URL}/questions`,
     headers: {
@@ -78,6 +80,16 @@ export function createQuestionFailure(error) {
     type: CREATE_QUESTION_FAILURE,
     payload: error
   };
+}
+
+ export const fetchQuestionsActionCreator = dispatch => {
+      return dispatch(fetchQuestions())
+      .then((response) => {
+          !response.error ? 
+            dispatch(fetchQuestionsSuccess(response.payload.data)) 
+          : 
+            dispatch(fetchQuestionsFailure(response.payload.data));
+      });
 }
 
 export const createQuestionActionCreator = (values, dispatch) => {

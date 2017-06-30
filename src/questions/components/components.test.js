@@ -23,6 +23,7 @@ const mockQuestions = [{
   questionString: 'Do you want to play baseball?',
   answer: false,
   _createdBy: 'tg@hotmail.com',
+  askee: 'Bossman',
 }]
 
 export default () => {

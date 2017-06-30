@@ -21,14 +21,14 @@ class SignInFormComponent extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.user.isAuthenticated === true && nextProps.user.user && !nextProps.user.error) {
+    if (nextProps.user.isAuthenticated === 'yes' && nextProps.user.user && !nextProps.user.error) {
       this.context.router.push('/');
     }
 
     //error
     //Throw error if it was not already thrown (check this.props.user.error to see if alert was already shown)
     //If u dont check this.props.user.error, u may throw error multiple times due to redux-form's validation errors
-    if (nextProps.user.isAuthenticated === false && !nextProps.user.user && nextProps.user.error && !this.props.user.error) {
+    if (nextProps.user.isAuthenticated === 'no' && !nextProps.user.user && nextProps.user.error && !this.props.user.error) {
       alert(nextProps.user.error.message);
     }
   }

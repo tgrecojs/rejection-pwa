@@ -28,19 +28,19 @@ const getExpectedQuestionsList = (props = {}) => Object.assign({}, defaultState.
 
  const questions = [
       {
-        id: cuid(),
+        _id: 1,
         questionString: 'Your age is old?',
         answer: false,
         _createdBy: "tg@hotmail.com"
       },
        {
-        id: cuid(),
+        _id: 2,
         questionString: 'Can I change your hair color?',
         answer: false,
         _createdBy: "tg@hotmail.com"
       },
        {
-        id: cuid(),
+        _id: 3,
         questionString: 'Can I ride your bike?',
         answer: false,
         _createdBy: "tg@hotmail.com"
@@ -136,29 +136,31 @@ export default () => {
 
     // Define actual and expected values for the test
     const expected = getExpectedNewQuestion({error: error});
-
     // Compare actual vs expected and conclude the test
     assert.same(actual, expected, msg);
     assert.end();
   });
-  test('question()::CREATE_QUESTION_SUCCESS given a newQuestion', assert => {
-    const msg = 'should should return an object with payload: { id, questionString, answer, _createdBy } = question';
-    const initialState = question();
+  test('question()::CREATE_QUESTION given a {newQuestion} object', assert => {
+    const msg = 'should should update the newQuestion.question with { id, questionString, askee, answer, _createdBy, } = question';
+    const initialState = newQuestionReducer({defaultState});
     const newQuestion = {
-      id: cuid(),
+      data : {
+      _id: 1,
       questionString: 'Can I pet your dog?',
       answer: false,
+      askee: 'Stranger',
       _createdBy: "tiller@hotmail.com"
+     } 
     }
     const action = {
-      type: CREATE_QUESTION_SUCCESS,
+      type: CREATE_QUESTION,
       payload: newQuestion
     }
     // Define prexisting conditions
     const actual = newQuestionReducer(initialState, action);
 
     // Define actual and expected values for the test
-    const expected = getExpectedNewQuestion({question: newQuestion});
+    const expected = getExpectedNewQuestion({question: newQuestion.data, loading: true});
 
     // Compare actual vs expected and conclude the test
     assert.same(actual, expected, msg);
