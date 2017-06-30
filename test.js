@@ -12,4 +12,4 @@ test('Component aspect being tested', assert => {
 questionsTest();
 userTest();
 // testStore()
-// themeTest()
+//themeTest()
